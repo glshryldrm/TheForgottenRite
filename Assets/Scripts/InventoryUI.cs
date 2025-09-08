@@ -6,25 +6,45 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public InventoryManager inventory;
-    public GameObject InventoryPanel;
+    public Inventory inventory;
+    public Transform slotsParent;
     public GameObject slotPrefab;
-    public List<GameObject> slotList = new List<GameObject>();
 
-    void Start()
+    private List<SlotUI> slotUIs = new List<SlotUI>();
+
+    private void Start()
     {
-        slotList.Add(InventoryPanel.GetComponentInChildren<RectTransform>().gameObject);
+        // slot prefablarýndan UI oluþtur (veya inspector'da hazýr slotlarý al)
+        for (int i = 0; i < inventory.capacity; i++)
+        {
+            GameObject go = Instantiate(slotPrefab, slotsParent);
+            SlotUI s = go.GetComponent<SlotUI>();
+            s.slotIndex = i;
+            slotUIs.Add(s);
+        }
+        //slotUIs.Add(slotsParent.GetComponentInChildren<SlotUI>());
+        //for (int i = 0; i < slotUIs.Count; i++)
+        //{
+        //    slotUIs[i].slotIndex = i;
+        //}
+
+        inventory.OnInventoryChanged += RefreshUI;
         RefreshUI();
     }
+
     public void RefreshUI()
     {
-        for (int i = 0; i < inventory.items.Count; i++)
+        for (int i = 0; i < inventory.slots.Count; i++)
         {
-            GameObject slot = slotList[i];
-            GameObject item = Instantiate(gameObject);
-            item.AddComponent<Image>();
-            item.transform.SetParent(slot.transform);
-            item.GetComponent<Image>().sprite = inventory.items[i].icon;
+            var data = inventory.slots[i];
+            if (data.IsEmpty)
+                slotUIs[i].SetEmpty();
+            else
+                slotUIs[i].SetItem(data.item.icon, data.amount);
         }
+    }
+    public void ChangeEnabled()
+    {
+        this.gameObject.SetActive(!gameObject.activeSelf);
     }
 }
