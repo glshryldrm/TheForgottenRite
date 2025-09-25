@@ -123,13 +123,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 321649875450248862, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+        m_TargetAssemblyTypeName: ItemDrop, Assembly-CSharp
+        m_MethodName: ReplaceItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3682594655148447162}
   amountText: {fileID: 1292601505380976245}
+  item: {fileID: 11400000, guid: 15a735f15e5268b48821b294fc3a2bbb, type: 2}
   slotIndex: 0
 --- !u!1 &7647517389777299712
 GameObject:

@@ -8,6 +8,7 @@ public class InventorySlot
 {
     public ItemSO item;
     public int amount;
+    public int SlotIndex;
 
     public bool IsEmpty => item == null;
     public void Clear() { item = null; amount = 0; }
@@ -19,12 +20,13 @@ public class Inventory : MonoBehaviour
 
     public event Action OnInventoryChanged;
 
-    private void Awake()
+    private void Start()
     {
         slots = new List<InventorySlot>(capacity);
         for (int i = 0; i < capacity; i++)
         {
             slots.Add(new InventorySlot());
+              slots[i].SlotIndex = i;
         }
     }
     public bool AddItem(ItemSO item, int amont = 1)
@@ -50,6 +52,7 @@ public class Inventory : MonoBehaviour
             {
                 slot.item = item;
                 slot.amount = amont;
+                item.slotIndex = slot.SlotIndex;
                 OnInventoryChanged?.Invoke();
                 return true;
             }
@@ -58,8 +61,9 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public bool RemoveItem(int slotIndex, int amont = 1)
+    public bool RemoveItem(ItemSO item, int amont = 1)
     {
+        int slotIndex = item.slotIndex;
         if (slotIndex < 0 || slotIndex >= slots.Count) return false;
         if (slots[slotIndex].IsEmpty) return false;
 

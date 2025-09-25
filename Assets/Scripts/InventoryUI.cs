@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
     public Inventory inventory;
     public Transform slotsParent;
     public GameObject slotPrefab;
+    public GameObject playerInv;
 
     private List<SlotUI> slotUIs = new List<SlotUI>();
 
@@ -18,20 +19,16 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < inventory.capacity; i++)
         {
             GameObject go = Instantiate(slotPrefab, slotsParent);
+
             SlotUI s = go.GetComponent<SlotUI>();
             s.slotIndex = i;
             slotUIs.Add(s);
         }
-        //slotUIs.Add(slotsParent.GetComponentInChildren<SlotUI>());
-        //for (int i = 0; i < slotUIs.Count; i++)
-        //{
-        //    slotUIs[i].slotIndex = i;
-        //}
+
 
         inventory.OnInventoryChanged += RefreshUI;
         RefreshUI();
     }
-
     public void RefreshUI()
     {
         for (int i = 0; i < inventory.slots.Count; i++)

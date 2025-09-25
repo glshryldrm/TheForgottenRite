@@ -8,6 +8,8 @@ public class SlotUI : MonoBehaviour
 {
     public Image itemImage;
     public TMP_Text amountText;
+    public ItemSO item;
+    private ItemDrop itemDrop;
 
     public int slotIndex;
 
@@ -24,5 +26,13 @@ public class SlotUI : MonoBehaviour
         itemImage.preserveAspect = true;
         itemImage.enabled = true;
         amountText.text = amont < 1 ? amont.ToString() : "";
+    }
+    public void Setup(ItemSO newItem, ItemDrop dropRef)
+    {
+        item = newItem;
+        itemDrop = dropRef;
+
+        GetComponent<Button>().onClick.RemoveAllListeners();
+        GetComponent<Button>().onClick.AddListener(() => itemDrop.DropItem(item, 1)); // 1 adet býrak
     }
 }

@@ -199,49 +199,65 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!1 &6569956073902968490
-GameObject:
+--- !u!1001 &6329385705781148128
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7038591786041251988}
-  - component: {fileID: 5117794323566282182}
-  m_Layer: 0
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7038591786041251988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6569956073902968490}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28882912, y: -6.9202304, z: 1.244395}
-  m_LocalScale: {x: 1.4285715, y: 1.4285715, z: 1.4285715}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7708079599675590917}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5117794323566282182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7708079599675590917}
+    m_Modifications:
+    - target: {fileID: 935432601595623242, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_Name
+      value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28882912
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.9202304
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.244395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+--- !u!4 &7038591786041251988 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3925000514910921076, guid: 8e72e130673e5fd4ea0e076de76b6e3e, type: 3}
+  m_PrefabInstance: {fileID: 6329385705781148128}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6569956073902968490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f5c39a27b12874382e2118b009d1a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capacity: 32
-  slots: []

@@ -131,6 +131,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 321649875450248862, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: inv
+      value: 
+      objectReference: {fileID: 238209246}
+    - target: {fileID: 321649875450248862, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 476096769}
     - target: {fileID: 4269571432304022635, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -175,7 +183,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Gem
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 321649875450248862, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10883,6 +10892,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1365424424466870936, guid: af67ceadc087899479232f75d2b79d59, type: 3}
   m_PrefabInstance: {fileID: 474810474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &476096769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2531830558009618219, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
+  m_PrefabInstance: {fileID: 1107865407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &479415757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17348,7 +17362,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2531830558009618219, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2048673858}
   m_SourcePrefab: {fileID: 100100000, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
 --- !u!1001 &1110315839
 PrefabInstance:
@@ -31461,6 +31478,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7708079599675590917, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
   m_PrefabInstance: {fileID: 1107865407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2048673858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476096769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558890f7b62c2a4498022c11c8d1e9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inv: {fileID: 238209246}
 --- !u!1001 &2055511854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32935,10 +32965,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryUI
       objectReference: {fileID: 0}
+    - target: {fileID: 802589185504318431, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1553117160988683857, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1036528283}
+    - target: {fileID: 3738593834730629579, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
+      propertyPath: itemDrop
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3738593834730629579, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: inventory
       value: 
