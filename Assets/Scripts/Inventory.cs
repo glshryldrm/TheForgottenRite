@@ -61,14 +61,14 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public bool RemoveItem(ItemSO item, int amont = 1)
+    public bool RemoveItem(int slotIndex, int amont = 1)
     {
-        int slotIndex = item.slotIndex;
         if (slotIndex < 0 || slotIndex >= slots.Count) return false;
         if (slots[slotIndex].IsEmpty) return false;
 
         slots[slotIndex].amount -= amont;
         if (slots[slotIndex].amount <= 0) slots[slotIndex].Clear();
+
         OnInventoryChanged?.Invoke();
         return true;
     }

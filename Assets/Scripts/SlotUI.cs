@@ -18,6 +18,7 @@ public class SlotUI : MonoBehaviour
         itemImage.sprite = null;
         itemImage.enabled = false;
         amountText.text = "";
+        GetComponent<Button>().onClick.RemoveAllListeners();
     }
 
     public void SetItem(Sprite sprite, int amont)
@@ -25,14 +26,16 @@ public class SlotUI : MonoBehaviour
         itemImage.sprite = sprite;
         itemImage.preserveAspect = true;
         itemImage.enabled = true;
-        amountText.text = amont < 1 ? amont.ToString() : "";
+        amountText.text = amont <= 1 ? "" : amont.ToString();
     }
-    public void Setup(ItemSO newItem, ItemDrop dropRef)
+    public void Setup(int slotIndex, ItemDrop dropRef)
     {
-        item = newItem;
         itemDrop = dropRef;
 
         GetComponent<Button>().onClick.RemoveAllListeners();
-        GetComponent<Button>().onClick.AddListener(() => itemDrop.DropItem(item, 1)); // 1 adet býrak
+        GetComponent<Button>().onClick.AddListener(() => {
+            Debug.Log("týklandý");
+            itemDrop.DropItem(slotIndex, 1);
+            }); // 1 adet býrak
     }
 }

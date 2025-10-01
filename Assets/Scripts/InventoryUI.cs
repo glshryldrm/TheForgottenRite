@@ -37,7 +37,12 @@ public class InventoryUI : MonoBehaviour
             if (data.IsEmpty)
                 slotUIs[i].SetEmpty();
             else
+            {
                 slotUIs[i].SetItem(data.item.icon, data.amount);
+                slotUIs[i].Setup(data.SlotIndex, playerInv.GetComponentInParent<ItemDrop>());
+            }
+                
+
         }
     }
     public void ChangeEnabled()

@@ -4,25 +4,27 @@ public class ItemDrop : MonoBehaviour
 {
     public Inventory inv; // Player'ýn Inventory'si
 
-    public void DropItem(ItemSO item, int amount)
+    public void DropItem(int slotIndex, int amount)
     {
-        if (inv.RemoveItem(item, amount))
+        var slot = inv.slots[slotIndex];
+        ItemSO itemToDrop = slot.item;
+        if (inv.RemoveItem(slotIndex, amount))
         {
-            if (item.pickupPrefab != null)
+            if (itemToDrop.pickupPrefab != null)
             {
                 Vector3 dropPos = transform.position + new Vector3(0, 1f, 0); // biraz yukarý býrak
-                GameObject dropped = Instantiate(item.pickupPrefab, dropPos, Quaternion.identity);
+                GameObject dropped = Instantiate(itemToDrop.pickupPrefab, dropPos, Quaternion.identity);
 
                 ItemPickup pickup = dropped.GetComponent<ItemPickup>();
                 if (pickup != null)
                 {
-                    pickup.item = item;
+                    pickup.item = itemToDrop;
                     pickup.amount = amount;
                 }
             }
             else
             {
-                Debug.LogWarning($"{item.name} için pickupPrefab atanmadý!");
+                Debug.LogWarning($"{itemToDrop.name} için pickupPrefab atanmadý!");
             }
         }
         else
