@@ -6,8 +6,9 @@ public class ItemDrop : MonoBehaviour
 
     public void DropItem(int slotIndex, int amount)
     {
-        var slot = inv.slots[slotIndex];
+        InventorySlot slot = inv.slots[slotIndex];
         ItemSO itemToDrop = slot.item;
+
         if (inv.RemoveItem(slotIndex, amount))
         {
             if (itemToDrop.pickupPrefab != null)
@@ -20,6 +21,7 @@ public class ItemDrop : MonoBehaviour
                 {
                     pickup.item = itemToDrop;
                     pickup.amount = amount;
+                    
                 }
             }
             else

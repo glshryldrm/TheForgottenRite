@@ -6,15 +6,19 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Inventory inventory;
     public Transform slotsParent;
     public GameObject slotPrefab;
-    public GameObject playerInv;
+    public GameObject player;
+
+    private ItemDrop playerDrop;
+    private Inventory inventory;
 
     private List<SlotUI> slotUIs = new List<SlotUI>();
 
     private void Start()
     {
+        inventory = player.GetComponentInChildren<Inventory>();
+        playerDrop = player.GetComponent<ItemDrop>();
         // slot prefablarýndan UI oluþtur (veya inspector'da hazýr slotlarý al)
         for (int i = 0; i < inventory.capacity; i++)
         {
@@ -29,22 +33,41 @@ public class InventoryUI : MonoBehaviour
         inventory.OnInventoryChanged += RefreshUI;
         RefreshUI();
     }
+    //public void RefreshUI()
+    //{
+    //    for (int i = 0; i < inventory.slots.Count; i++)
+    //    {
+    //        InventorySlot data = inventory.slots[i];
+    //        if (data.IsEmpty)
+    //            slotUIs[i].SetEmpty();
+    //        else
+    //        {
+    //            slotUIs[i].SetItem(data.item.icon, data.amount);
+    //            slotUIs[i].Setup(data.SlotIndex, playerInv.GetComponentInParent<ItemDrop>());
+    //        }
+
+
+    //    }
+    //}
     public void RefreshUI()
     {
         for (int i = 0; i < inventory.slots.Count; i++)
         {
-            var data = inventory.slots[i];
+            InventorySlot data = inventory.slots[i];
+            SlotUI slotUI = slotUIs[i];
+            slotUI.slotIndex = i; // her seferinde senkronize et
+
             if (data.IsEmpty)
-                slotUIs[i].SetEmpty();
+            {
+                slotUI.SetEmpty();
+            }
             else
             {
-                slotUIs[i].SetItem(data.item.icon, data.amount);
-                slotUIs[i].Setup(data.SlotIndex, playerInv.GetComponentInParent<ItemDrop>());
+                slotUI.SetItem(data.item, data.amount, playerDrop);
             }
-                
-
         }
     }
+
     public void ChangeEnabled()
     {
         this.gameObject.SetActive(!gameObject.activeSelf);

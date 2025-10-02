@@ -17303,10 +17303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monk
       objectReference: {fileID: 0}
-    - target: {fileID: 4700708674759113373, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
-      propertyPath: inv
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7708079599675590917, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.46
@@ -31544,6 +31540,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7708079599675590917, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
   m_PrefabInstance: {fileID: 1107865407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2048673852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4700708674759113373, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
+  m_PrefabInstance: {fileID: 1107865407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476096769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558890f7b62c2a4498022c11c8d1e9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2055511854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33027,6 +33034,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1036528283}
     - target: {fileID: 3738593834730629579, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 476096769}
+    - target: {fileID: 3738593834730629579, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: itemDrop
       value: 
       objectReference: {fileID: 0}
@@ -33038,6 +33049,10 @@ PrefabInstance:
       propertyPath: playerInv
       value: 
       objectReference: {fileID: 1266865526}
+    - target: {fileID: 3738593834730629579, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
+      propertyPath: playerDrop
+      value: 
+      objectReference: {fileID: 2048673852}
     - target: {fileID: 8504971774508383871, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0

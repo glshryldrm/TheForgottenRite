@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < capacity; i++)
         {
             slots.Add(new InventorySlot());
-              slots[i].SlotIndex = i;
+            slots[i].SlotIndex = i;
         }
     }
     public bool AddItem(ItemSO item, int amont = 1)
