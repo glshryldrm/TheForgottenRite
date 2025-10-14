@@ -10,5 +10,5 @@ public class ItemSO : ScriptableObject
     public Sprite icon;
     public bool isStackable = true;
     public int slotIndex;
-    public GameObject pickupPrefab;
+    public string pickupAddress;
 }

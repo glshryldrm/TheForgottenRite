@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9985205a28ec54e9741bf2e4db3fda, type: 3}
-  m_Name: Red Gem
+  m_Script: {fileID: 11500000, guid: b1487f5d688e4f94f828f879d599dbdc, type: 3}
+  m_Name: Built In Data_PlayerDataGroupSchema
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: Red Gem
-  icon: {fileID: 21300000, guid: 433f82f8db3a1ca4386a0308fc38f5f2, type: 3}
-  isStackable: 1
-  slotIndex: 1
-  pickupAddress: red_gem_pickup
+  m_Group: {fileID: 11400000, guid: 6eac80af4b4ea9f4587574ade91ac539, type: 2}
+  m_IncludeResourcesFolders: 1
+  m_IncludeBuildSettingsScenes: 1

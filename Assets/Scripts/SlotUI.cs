@@ -22,7 +22,7 @@ public class SlotUI : MonoBehaviour
         itemImage.sprite = null;
         itemImage.enabled = false;
         amountText.text = "";
-        
+        button.onClick.RemoveAllListeners();
     }
 
     //public void SetItem(Sprite sprite, int amont)
