@@ -41,6 +41,7 @@ public class Inventory : MonoBehaviour
                 {
                     slot.amount += amont;
                     OnInventoryChanged?.Invoke();
+                    //InventoryUI.Instance.RefreshUI();
                     return true;
                 }
             }
@@ -54,6 +55,7 @@ public class Inventory : MonoBehaviour
                 slot.amount = amont;
                 item.slotIndex = slot.SlotIndex;
                 OnInventoryChanged?.Invoke();
+                //InventoryUI.Instance.RefreshUI();
                 return true;
             }
         }
@@ -70,6 +72,7 @@ public class Inventory : MonoBehaviour
         if (slots[slotIndex].amount <= 0) slots[slotIndex].Clear();
 
         OnInventoryChanged?.Invoke();
+        //InventoryUI.Instance.RefreshUI();
         return true;
     }
 }

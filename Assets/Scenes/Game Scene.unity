@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,9 +178,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5365724998928709040, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6187528750781004324, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
       propertyPath: m_Name
       value: Red Gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187528750781004324, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16496,7 +16503,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 381689839445287741, guid: b2379521763714c4b960563aa16a0752, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1103780303}
   m_SourcePrefab: {fileID: 100100000, guid: b2379521763714c4b960563aa16a0752, type: 3}
 --- !u!20 &1036528283 stripped
 Camera:
@@ -17291,6 +17301,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: ebdc6ef285e0bf542bed7e9c1bfb9923, type: 3}
   m_PrefabInstance: {fileID: 1094757940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103780298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 381689839445287741, guid: b2379521763714c4b960563aa16a0752, type: 3}
+  m_PrefabInstance: {fileID: 1036528282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1103780303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103780298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1001 &1107865407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17302,6 +17333,10 @@ PrefabInstance:
     - target: {fileID: 2531830558009618219, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
       propertyPath: m_Name
       value: Monk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700708674759113373, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
+      propertyPath: itemLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 7708079599675590917, guid: 9f078d69c827ff64f8b00dfa9abcc540, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17714,6 +17749,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7947911505737750448, guid: 5d42979a3c318c341b37b4b1f2c85750, type: 3}
   m_PrefabInstance: {fileID: 1144802543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1145065609
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269571432304022635, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365724998928709040, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187528750781004324, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_Name
+      value: Lilac Gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187528750781004324, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4792c659e4ee9394a97a69c0afd7fde6, type: 3}
 --- !u!1001 &1145457428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23911,9 +24011,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5365724998928709040, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6187528750781004324, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
       propertyPath: m_Name
       value: Red Gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187528750781004324, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33027,7 +33135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802589185504318431, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1553117160988683857, guid: 60615c8f091a5dc4bb09de044ea6f9d1, type: 3}
       propertyPath: m_Camera
@@ -34919,3 +35027,4 @@ SceneRoots:
   - {fileID: 213483732}
   - {fileID: 940846}
   - {fileID: 1249885843}
+  - {fileID: 1145065609}

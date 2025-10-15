@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2137755149178463758}
   - component: {fileID: 5403595123477489448}
   - component: {fileID: 4700708674759113373}
+  - component: {fileID: 4978232832350457758}
   m_Layer: 6
   m_Name: Monk
   m_TagString: Player
@@ -213,6 +214,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inv: {fileID: 5152641494593132892}
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &4978232832350457758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531830558009618219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64a02a6b9453b74d95ce825bebdb5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 512
+  pickupRange: 1
 --- !u!1001 &8821434829608645576
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,12 +9,17 @@ public class InventoryUI : MonoBehaviour
     public Transform slotsParent;
     public GameObject slotPrefab;
     public GameObject player;
+    public static  InventoryUI Instance;
 
     private ItemDrop playerDrop;
     private Inventory inventory;
 
     private List<SlotUI> slotUIs = new List<SlotUI>();
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         inventory = player.GetComponentInChildren<Inventory>();

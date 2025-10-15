@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Red Gem
   icon: {fileID: 21300000, guid: 433f82f8db3a1ca4386a0308fc38f5f2, type: 3}
   isStackable: 1
-  slotIndex: 0
-  pickupPrefab: {fileID: 6187528750781004324, guid: eace3dc0248a923449ea8dc2a5b2aef3, type: 3}
+  slotIndex: 1
+  pickupAddress: red_gem_pickup

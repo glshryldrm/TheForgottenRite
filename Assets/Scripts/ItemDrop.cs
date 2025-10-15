@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ItemDrop : MonoBehaviour
 {
-    public Inventory inv; // Player'ýn Inventory'si
+    public Inventory inv;
 
     public void DropItem(int slotIndex, int amount)
     {
@@ -11,27 +13,30 @@ public class ItemDrop : MonoBehaviour
 
         if (inv.RemoveItem(slotIndex, amount))
         {
-            if (itemToDrop.pickupPrefab != null)
-            {
-                Vector3 dropPos = transform.position + new Vector3(0, 1f, 0); // biraz yukarý býrak
-                GameObject dropped = Instantiate(itemToDrop.pickupPrefab, dropPos, Quaternion.identity);
+            Vector3 dropPos = transform.position + Vector3.up * 1.5f;
 
-                ItemPickup pickup = dropped.GetComponent<ItemPickup>();
-                if (pickup != null)
-                {
-                    pickup.item = itemToDrop;
-                    pickup.amount = amount;
-                    
-                }
-            }
-            else
+            // Prefab'ý Addressables üzerinden yükle
+            Addressables.LoadAssetAsync<GameObject>(itemToDrop.pickupAddress).Completed += (op) =>
             {
-                Debug.LogWarning($"{itemToDrop.name} için pickupPrefab atanmadý!");
-            }
-        }
-        else
-        {
-            Debug.Log("Envanterde item yok veya miktar eksik!");
+                if (op.Status == AsyncOperationStatus.Succeeded)
+                {
+                    GameObject prefab = op.Result;
+                    GameObject dropped = Instantiate(prefab, dropPos, Quaternion.identity);
+
+                    ItemPickup pickup = dropped.GetComponent<ItemPickup>();
+                    if (pickup != null)
+                    {
+                        pickup.item = itemToDrop;
+                        pickup.amount = amount;
+                    }
+
+                    Debug.Log($"{itemToDrop.itemName} baþarýyla droplandý!");
+                }
+                else
+                {
+                    Debug.LogWarning($"Addressables prefab yüklenemedi: {itemToDrop.pickupAddress}");
+                }
+            };
         }
     }
 }
