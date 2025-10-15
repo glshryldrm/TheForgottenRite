@@ -13,8 +13,8 @@ public class ItemDrop : MonoBehaviour
 
         if (inv.RemoveItem(slotIndex, amount))
         {
-            Vector3 dropPos = transform.position + new Vector3(0, 1f, 0);
-            
+            Vector3 dropPos = transform.position + Vector3.up * 1.5f;
+
             // Prefab'ý Addressables üzerinden yükle
             Addressables.LoadAssetAsync<GameObject>(itemToDrop.pickupAddress).Completed += (op) =>
             {

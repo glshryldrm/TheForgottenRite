@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2903916372388479314}
   - component: {fileID: 7219320060509404635}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4269571432304022635}
   - component: {fileID: 772939119581991072}
   - component: {fileID: 1463470509857833980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lilac Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
